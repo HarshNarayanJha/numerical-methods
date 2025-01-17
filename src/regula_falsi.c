@@ -1,10 +1,10 @@
 #include <math.h>
 #include <stdio.h>
 
-#define f(x) pow(x, 5) - 5 * x + 3
+#define f(x) cos(x) - x *exp(x)
 #define PRECISION 10e-6
 
-double bisection_method(double x0, double x1) {
+double regula_falsi_method(double x0, double x1) {
   double x2, f0, f1, f2;
 
   f0 = f(x0);
@@ -16,7 +16,7 @@ double bisection_method(double x0, double x1) {
   }
 
   do {
-    x2 = (x0 + x1) / 2;
+    x2 = (f1 * x0 - f0 * x1) / (f1 - f0);
     f2 = f(x2);
 
     if (f0 * f2 < 0) {
@@ -27,7 +27,7 @@ double bisection_method(double x0, double x1) {
       f0 = f(x0);
     }
     printf("Estimated root is %lf with function value %lf\n", x2, f2);
-  } while (fabs(x1 - x0) > PRECISION);
+  } while (fabs(f2) > PRECISION);
 
   return x2;
 }
@@ -37,7 +37,7 @@ int main() {
   printf("Enter the values for x0 and x1: ");
   scanf("%lf %lf", &x0, &x1);
 
-  double x2 = bisection_method(x0, x1);
+  double x2 = regula_falsi_method(x0, x1);
 
   printf("Root between %lf and %lf for f(x): %lf\n", x0, x1, x2);
 
