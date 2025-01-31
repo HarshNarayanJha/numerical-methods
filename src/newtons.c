@@ -29,7 +29,7 @@ double newtons_method(double x) {
 
 int main() {
   double x;
-  printf("Enter the values for x: ");
+  printf("Enter the value for x: ");
   scanf("%lf", &x);
 
   double x2 = newtons_method(x);
