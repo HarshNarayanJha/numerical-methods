@@ -5,9 +5,13 @@ ColumnLimit: 100
 Language: Cpp
 Standard: c++17
 AlignConsecutiveAssignments: true
-AlignConsecutiveDeclarations: true
+AlignConsecutiveDeclarations: None
 AllowShortFunctionsOnASingleLine: Empty
 BraceWrapping:
   AfterClass: true
   AfterFunction: true
+AlignArrayOfStructures: Right
+BreakBeforeBinaryOperators: None
+BinPackArguments: false
+BinPackParameters: false
 SortIncludes: true
