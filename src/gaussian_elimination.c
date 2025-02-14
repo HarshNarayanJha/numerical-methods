@@ -2,13 +2,17 @@
 
 #define n 3
 
+/// Also know as Gauss Jordan Method
+/// This is a method to solve a system of linear equations
+/// It is a direct method, meaning it gives the exact solution
+
 int main() {
   float x[n];
 
   // The coefficient matrix A in Ax = b
   float a[n][n] = {
       {1, 1, 1},   // First equation: x + y + z = 1
-      {4, 3, -1},  // Second equation: 4x + 3y - z = 6  
+      {4, 3, -1},  // Second equation: 4x + 3y - z = 6
       {3, 5, 3},   // Third equation: 3x + 5y + 3z = 4
   };
 
