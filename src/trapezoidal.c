@@ -9,18 +9,12 @@ double f(double x) {
 
 #define N 30
 
-int main() {
-  int a;
-  int b;
-
-  printf("Enter range for integration (a b): ");
-  scanf("%d %d", &a, &b);
-
+double trapezoidal(int a, int b) {
   double h = (double)(b - a) / (double)N;
 
   double result = 0;
 
-  for (int i = a + h; i < b - h; i += h) {
+  for (double i = a + h; i < b - h; i += h) {
     result += 2 * f(i);
   }
 
@@ -29,5 +23,18 @@ int main() {
 
   result *= h / 2;
 
-  printf("Integration result is: %lf\n", result);
+  return result;
+}
+
+int main() {
+  int a;
+  int b;
+
+  printf("Enter range for integration (a b): ");
+  scanf("%d %d", &a, &b);
+
+  double trap = trapezoidal(a, b);
+
+  printf("Integration results are:\n");
+  printf("Trapezoidal: %lf\n", trap);
 }
