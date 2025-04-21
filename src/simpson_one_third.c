@@ -26,7 +26,7 @@ double simpson_one_third(int a, int b) {
   result += f(a);
   result += f(b);
 
-  result *= h / 3;
+  result *= h / 3.0;
 
   return result;
 }

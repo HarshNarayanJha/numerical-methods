@@ -24,7 +24,7 @@ double simpson_three_eight(int a, int b) {
   result += f(a);
   result += f(b);
 
-  result *= 3 * h / 8;
+  result *= 3.0 * h / 8.0;
 
   return result;
 }
